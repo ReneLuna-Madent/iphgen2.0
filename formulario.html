@@ -1,0 +1,2423 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min (2).css">
+
+
+
+  <title>Formulario</title>
+  <!-- Required meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container bg-red">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col">
+
+        <form action="generarPDF.php" method="POST" enctype="multipart/form-data">
+
+          <input type="file" name="archivo" id="archivo">
+
+
+          <p align="right">
+            <a href="buscador.html">Buscar</a>
+          </p>
+
+
+
+          <P>
+            <H1>INFORME POLICIAL HOMOLOGADO (IPH)</H1>
+          </P>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoIPH">Incluir IPH</label> &emsp;
+            <input type="checkbox" name="anexoIPH" id="anexoIPH" class="form-check-input"
+              onchange="seleccion(0);">&emsp;
+            <!--</div>
+              <div class="form-check">-->
+
+
+          </div>
+          <br><br>
+
+          <div id="anexo0">
+
+            <h1>
+              <P align="center">
+                HECHO PROBABLEMENTE DELICTIVO
+              </P>
+            </h1>
+
+
+            <label class="form-check-label" for="anexoH">Anexar Documentacion</label> &emsp;
+            <input type="checkbox" name="doc" id="anexoH" class="form-check-input" onchange="seleccion(8);">&emsp;<br>
+
+
+            <div id="anexo8">
+              <div class="form-group">
+                <label class="form-check-label" for="anexoFO">Fotografias</label>
+                <input type="checkbox" name="anexoFO" id="anexoFO" value="1">&emsp;
+
+                <label class="form-check-label" for="anexoAU">Audio</label>
+                <input type="checkbox" name="anexoAU" id="anexoAU" value="2">&emsp;
+
+                <label class="form-check-label" for="anexoVI">Videos</label>
+                <input type="checkbox" name="anexoVI" id="anexoVI" value="3">&emsp;
+
+                <label class="form-check-label" for="anexoCM">Certificado Medico</label>
+                <input type="checkbox" name="anexoCM" id="anexoCM" value="4">&emsp;
+
+                <label class="form-check-label" for="anexoOT">Otra</label>
+                <input type="checkbox" name="anexoOT" id="anexoOT" value="5">
+                <div class="form-group">
+                  <label for="linea22">(¿Cual?)</label>
+                  <input type="text" name="linea22" id="linea22" class="form-control" maxlength="25">
+                </div>
+              </div>
+            </div>
+
+            <!--No. DE REFERENCIA-->
+
+
+            <div hidden>
+              <div class="form-group">
+                <label for="fecRef">Fecha</label>
+                <input type="date" name="fecRef" id="linea1" class="form-control" readonly>
+              </div>
+              <div class="form-group">
+                <label for="horRef">Hr</label>
+                <input type="time" name="horRef" id="linea2" class="form-control">
+              </div>
+            </div>
+
+
+
+
+
+            <!--Insertar campos de formulario-->
+
+
+            <p>
+              <h5>Apartado 1.1 Fecha y hora de la puesta a disposici&oacuten</h5>
+            </p>
+            <div class="form-group">
+              <label for="linea1">Fecha</label>
+              <input type="date" name="linea1" id="linea1" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea2">Hr</label>
+              <input type="time" name="linea2" id="linea2" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="linea3"># Expediente</label>
+              <input type="text" name="linea3" id="linea3" class="form-control" maxlength=15>
+            </div>
+            <!--Datos de quien realiza la puesta a disposicion-->
+            <p>
+              <h5>Datos de quien realiza la puesta a disposici&oacuten</h5>
+            </p>
+            <div class="form-group">
+              <label for="linea4">Primer apellido</label>
+              <input type="text" name="linea4" id="linea4" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea5">Segundo apellido</label>
+              <input type="text" name="linea5" id="linea5" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea6">Nombre(s)</label>
+              <input type="text" name="linea6" id="linea6" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea7">Adscripci&oacuten</label>
+              <input type="text" name="linea7" id="linea7" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea8">Cargo/Grado</label>
+              <input type="text" name="linea8" id="linea8" class="form-control">
+            </div>
+
+            <p>
+              <h5>Fiscal/Autoridad que recibe la puesta a disposicion</h5>
+            </p>
+            <div class="form-group">
+              <label for="linea9">Primer apellido</label>
+              <input type="text" name="linea9" id="linea9" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea10">Segundo apellido</label>
+              <input type="text" name="linea10" id="linea10" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea11">Nombre(s)</label>
+              <input type="text" name="linea11" id="linea11" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea12">Fiscalia/Autoridad</label>
+              <input type="text" name="linea12" id="linea12" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea13">Adscripci&oacuten</label>
+              <input type="text" name="linea13" id="linea13" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea14">Cargo</label>
+              <input type="text" name="linea14" id="linea14" class="form-control">
+            </div><br><br>
+
+            <!--SECCION 2. PRIMER RESPONDIENTE-->
+
+
+            <h1>
+              <p align="center">SECCION 2. PRIMER RESPONDIENTE</p>
+            </h1>
+
+            <div hidden>
+              <p>Apartado 2.1 Datos de identificacion</p>
+              <div class="form-group">
+                <label for="linea23">Primer apellido</label>
+                <input type="text" name="linea23" id="linea4" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="linea24">Segundo apellido</label>
+                <input type="text" name="linea24" id="linea5" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="linea25">Nombre(s)</label>
+                <input type="text" name="linea25" id="linea6" class="form-control">
+              </div>
+            </div>
+
+            <!--Seleccione con una "X" la institucion a la que pertenece, asi como la identidad federativa o municipio de adscripcion-->
+            <p> Seleccione la institucion a la que pertenece, asi como la identidad federativa o municipio de
+              adscripcion
+            </p>
+            <div class="form-check">
+              <label class="form-check-label" for="anexoGN">Guardia Nacional</label> &emsp;
+              <input type="checkbox" name="anexoGN" id="anexoGN" class="form-check-input" onchange="seleccion(9);">
+            </div>
+
+            <div class="form-check">
+              <label class="form-check-label" for="anexoPFM">Policía Federal Ministerial</label> &emsp;
+              <input type="checkbox" name="anexoPFM" id="anexoPFM" class="form-check-input"
+                onchange="seleccion(10);">&emsp;
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="anexoPM">Policía Ministerial</label> &emsp;
+              <input type="checkbox" name="anexoPM" id="anexoPM" class="form-check-input"
+                onchange="seleccion(11);">&emsp;
+              <label for="linea26"></label>
+              <input type="text" name="linea26" id="linea26" maxlength="50">
+            </div>
+
+            <div class="form-check">
+              <label class="form-check-label" for="anexoPMU">Policía Mando Unico</label> &emsp;
+              <input type="checkbox" name="anexoPMU" id="anexoPMU" class="form-check-input"
+                onchange="seleccion(12);">&emsp;
+              <label for="linea27"></label>
+              <input type="text" name="linea27" id="linea27" maxlength="50">
+            </div>
+
+
+            <div class="form-check">
+              <label class="form-check-label" for="anexoPE">Policía Estatal</label> &emsp;
+              <input type="checkbox" name="anexoPE" id="anexoPE" class="form-check-input"
+                onchange="seleccion(13);">&emsp;
+              <label for="linea28"></label>
+              <input type="text" name="linea28" id="linea28" maxlength="50">
+            </div>
+
+            <div class="form-check">
+              <label class="form-check-label" for="anexoPMUN">Policía Municipal</label> &emsp;
+              <input type="checkbox" name="anexoPMUN" id="anexoPMUN" class="form-check-input"
+                onchange="seleccion(14);">&emsp;
+              <label for="linea29"></label>
+              <input type="text" name="linea29" id="linea29" maxlength="50">
+
+              <div class="form-group">
+                <label for="linea32">Otra Autoridad</label>
+                <input type="text" name="linea32" id="linea32">
+              </div>
+            </div><br><br>
+
+
+            <div class="form-group">
+              <label for="linea30">¿C&uacuteal es su grado o cargo?</label>&emsp;
+              <input type="text" name="linea30" id="linea30">
+            </div>
+            <div class="form-group">
+              <label for="linea31">¿En que unidad arrib&oacute al lugar de la intervenci&oacuten?</label>&emsp;
+              <input type="text" name="linea31" id="linea31">
+            </div>
+
+            <div class="form-check">
+              <label class="form-check-label" for="anexoNA">No aplica</label> &emsp; &nbsp;
+              <input type="checkbox" name="anexoNA" id="anexoNA" class="form-check-input" onchange="seleccion(16);">
+            </div>
+
+
+            <label class="form-check-label" for="anexoI">¿Arribo mas de un elemento al lugar de la
+              intervencion?</label>
+
+            <input type="checkbox" name="anexoI" id="anexoI" onchange="seleccion(15);">&emsp;<br>
+
+            <div id="anexo15">
+              <div class="form-group">
+                <label for="linea33">¿Cuantos?</label>
+                <input type="text" name="linea33" id="linea33" class="form-control" maxlength="25">
+                <p>(001,002,...,010,...,)</p>
+              </div>
+            </div><br>
+
+            <!--SECCION 3. CONOCIMEINTO DEL ECHO Y SEGUIMIENTO DE LA ACTUACION DE LA AUTORIDAD-->
+            <center>
+              <h4>
+                <p>SECCION 3. CONOCIMIENTO DEL ECHO Y SEGUIMIENTO DE LA ACTUACION DE LA AUTORIDAD</p>
+              </h4>
+            </center>
+            <center>
+              <h5>
+                <p>Apartado 3.1 Conocimiento del echo por el primer respondiente</p>
+              </h5>
+            </center>
+            <h6>
+              <p>¿C&oacutemo se enter&oacute del echo?</p>
+            </h6>
+            <div class="form-check">
+              <label class="form-check-label" for="den">Denuncia</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="den" class="form-check-input" value="denuncia"
+                onchange="seleccion(16);">&emsp;
+              <label class="form-check-label" for="flaG">Flagrancia</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="flaG" class="form-check-input" value="flagrancia"
+                onchange="seleccion(17);">&emsp;
+              <label class="form-check-label" for="loc">Localizaci&oacuten</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="loc" class="form-check-input" value="localizacion"
+                onchange="seleccion(18);">&emsp;
+              <label class="form-check-label" for="manJ">Mandamiento judicial</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="manJ" class="form-check-input"
+                value="MandamientoJudicial" onchange="seleccion(19);">&emsp;
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="LlamadaEM">Llamada de emergencia</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="LlamadaEM" class="form-check-input"
+                value="LlamadaDeEmergencia" onchange="seleccion(20);">&emsp;
+              <label class="form-check-label" for="des">Descubrimiento</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="des" class="form-check-input" value="descubrimiento"
+                onchange="seleccion(21);">&emsp;
+              <label class="form-check-label" for="apo">Aportaci&oacuten</label> &emsp;
+              <input type="radio" name="comoSeEnteroDelEcho" id="apo" class="form-check-input" value="aportacion"
+                onchange="seleccion(22);">&emsp;
+            </div>
+            <div class="form-group">
+              <label for="linea34">911 No. <b>(Solo en caso de contar con el)</b></label>
+              <input type="text" name="linea34" id="linea34" class="form-control" maxlength="23">
+            </div>
+            <center>
+              <h5>
+                <p>Apartado 3.2 Seguimiento de la actuacion de la autoridad</p>
+              </h5>
+            </center>
+            <h6>
+              <p>Indique la fecha y hora en cada recuadro</p>
+            </h6>
+            <h6><b>
+                <p>Conocimiento del hecho</p>
+              </b></h6>
+            <div class="form-group">
+              <label for="linea35">Fecha</label>
+              <input type="date" name="linea35" id="linea35" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea36">Hr</label>
+              <input type="time" name="linea36" id="linea36" class="form-control">
+            </div>
+
+            <h6><b>
+                <p>Arribo al lugar</p>
+              </b></h6>
+            <div class="form-group">
+              <label for="linea37">Fecha</label>
+              <input type="date" name="linea37" id="linea37" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="linea38">Hr</label>
+              <input type="time" name="linea38" id="linea38" class="form-control">
+            </div>
+            <br><br>
+            <!--SECCION 4. LUGAR DE LA INTERVENCION-->
+            <center>
+              <h5>
+                <p>SECCION 4. LUGAR DE LA INTERVENCION</p>
+              </h5>
+            </center>
+            <center>
+              <h5>
+                <p>Apartado 4.1 Ubicaci&oacuten geogr&aacutefica</p>
+              </h5>
+            </center>
+            <div>
+              <label for="linea39">Calle/Tramo carretero</label>
+              <input type="text" name="linea39" id="linea39">
+              <label for="linea40">No. exterior</label>
+              <input type="text" name="linea40" id="linea40">
+            </div>
+            <div>
+              <label for="linea41">No. interior</label>
+              <input type="text" name="linea41" id="linea41">
+              <label for="linea42">Codigo Postal</label>
+              <input type="number" name="linea42" id="linea42">
+            </div>
+
+            <div class="form-group">
+              <label for="linea43">Colonia/Localidad</label>
+              <input type="text" name="linea43" id="linea43">
+            </div>
+            <div clas="form-group">
+              <label for="linea44">Municipio/Demarcaci&oacuten territorial</label>
+              <input type="text" name="linea44" id="linea44">
+            </div>
+            <div class="form-group">
+              <label for="linea45">Entidad federativa</label>
+              <input type="text" name="linea45" id="linea45">
+            </div>
+            <div class="form-group">
+              <label for="linea46">Referencias</label>
+              <input type="text" name="linea46" id="linea46">
+            </div>
+            <p>Anote las coordenadas geogr&aacuteficas</p>
+            <div class="form-group">
+              <label for="linea47">Latitud</label>
+              <input type="float" name="linea47" id="linea47" maxlength="9">
+            </div>
+            <div class="form-group">
+              <label for="linea48">Longitud</label>
+              <input type="text" name="linea48" id="linea48" maxlength="10">
+            </div>
+
+            <center>
+              <h5>
+                <p>Apartado 4.2 Inspecci&oacuten del lugar</p>
+              </h5>
+            </center>
+            <label class="form-check-label" for="ins">¿Realiz&oacute la inspecci&oacuten del lugar?</label> &emsp;
+            <input type="checkbox" name="ins" id="ins" class="form-check-input" onchange="seleccion(20);">&emsp;
+
+            <label class="form-check-label" for="obj">Al momento de realizar la inspecci&oacuten del
+              lugar,¿Encontr&oacute alg&uacuten objeto relacionado con los hechos?</label> &emsp;
+            <input type="checkbox" name="obj" id="obj" onchange="seleccion(21);">&emsp;
+
+            <label class="form-check-label" for="pre">¿Preserv&oacute el lugar de la intervenci&oacuten?</label>
+            &emsp;
+            <input type="checkbox" name="pre" id="pre" onchange="seleccion(22);">&emsp;
+
+            <label class="form-check-label" for="pri">¿Llev&oacute a cabo la priorizaci&oacuten en el lugar de la
+              intervenci&oacuten?</label> &emsp;
+            <input type="checkbox" name="pri" id="pri" onchange="seleccion(23);">&emsp;<br><br>
+
+            <h6>
+              <p>Tipo de riesgo presentado</p>
+            </h6>
+            <label class="form-check-label" for="soc">Sociales</label> &emsp;
+            <input type="checkbox" name="soc" id="soc" onchange="seleccion(24);">&emsp;
+            <label class="form-check-label" for="nat">Naturales</label> &emsp;
+            <input type="checkbox" name="nat" id="nat" onchange="seleccion(25);">&emsp;<br>
+            <div class="form-group">
+              <label for="linea49">
+                <h6>Especifique</h6>
+              </label>
+              <input type="text" name="linea49" id="linea49">
+            </div>
+
+            <!--SECCION 5. NARRATIVA DE LOS ECHOS-->
+            <center>
+              <h5>
+                <p>SECCION 5. NARRATIVA DE LOS ECHOS</p>
+              </h5>
+            </center>
+
+            <div id="narrativaHechos">
+              <i><label for="narrativaHech">Relate cronol&oacutegicamente las acciones realizadas durante su
+                  intervenci&oacuten
+                  desde el conocimiento del hecho hasta la puesta a disposici&oacuten. En su caso, explique las
+                  circunstancias de modo, tiempo y lugar que motivaron cada uno de los niveles de contacto y la
+                  detenci&oacuten. Tome como base las siguientes preguntas: ¿Qui&eacuten? (personas), ¿Qu&eacute?
+                  (hechos), ¿C&oacutemo? (circunstancias), ¿Cu&aacutendo? (tiempo) y ¿D&oacutende?
+                  (lugar).</label></i><br>
+              <textarea rows="5" cols="60" type="text" name="narrativaHech" id="narrativaHech"
+                maxlength="2000"></textarea><br>
+              <!--
+                  <label for="continuacionNarrativa">Continuacion Narrativa en Anexo G</label>
+                  <input type="checkbox" name="continuacionNarrativa" id="continuacionNarrativa"
+                    onchange="agregar(1)"></input>
+                  -->
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoA">Incluir anexo A</label> &emsp;
+            <input type="checkbox" name="anexoA" id="anexoA" class="form-check-input" onchange="seleccion(1);">&emsp;
+          </div>
+
+          <div id="anexo1">
+            <h2>
+              <p align="center">ANEXO A DETENCION(ES)</p>
+            </h2>
+
+            <div class="form-group">
+              <label for="linea15">Detenciones</label>
+              <input type="text" name="linea15" id="linea15" class="form-control" maxlength="3" hidden>
+            </div>
+
+            <p>
+              <h5>Llene este Anexo por cada persona detenida</h5>
+            </p>
+
+            <div class="form-group">
+              <label for="linea51"><b>Persona detenida</b></label>
+              <input type="text" name="linea51" id="linea51" maxlength="3">
+              <p>(001,002,...,010,...,)</p>
+            </div>
+
+
+            <div>
+              <label for="linea52">N&uacutemero de detenci&oacuten (RND)</label>
+              <input type="text" name="linea52" id="linea52" maxlength="12">
+            </div>
+            <h5>
+              <p align="center">
+                Apartado A.1 Fecha y hora de la detenci&oacuten
+              </p>
+            </h5>
+            <div class="form-group">
+              <label for="linea53">Fecha</label>
+              <input type="date" name="linea53" id="linea53" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="linea54">Hr</label>
+              <input type="time" name="linea54" id="linea54" class="form-control">
+            </div>
+            <br><br>
+            <h5>
+              <p align="center">Apartado A.2 Datos generales de la persona detenida</p>
+            </h5>
+
+            <div class="form-group ">
+              <label for="linea55">Primer apellido</label>
+              <input type="text" name="linea55" id="linea55" class="form-control anexoA">
+            </div>
+
+            <div class="form-group">
+              <label for="linea56">Segundo apellido</label>
+              <input type="text" name="linea56" id="linea56" class="form-control anexoA">
+            </div>
+
+            <div class="form-group">
+              <label for="linea57">Nombre(s)</label>
+              <input type="text" name="linea57" id="linea57" class="form-control anexoA">
+            </div>
+
+            <div class="form-group">
+              <label for="linea58">Apodo o alias</label>
+              <input type="text" name="linea58" id="linea58" class="form-control">
+            </div>
+
+            <p><b>Nacionalidad</b></p>
+            <div>
+              <label class="form-check-label" for="mex">Mexicana</label> &emsp;
+              <input type="checkbox" name="mex" id="mex" class="form-check-input">&emsp;<br>
+            </div>
+
+            <label class="form-check-label" for="anexoH2">Extranjero</label>&emsp;&nbsp;
+            <input type="checkbox" name="anexoH2" id="anexoH2" class="form-check-input" onchange="seleccion(51);">
+
+            <div id="anexo51">
+              <label class="form-check-label" for="linea59">¿Cu&aacutel?</label>
+              <input type="text" name="linea59" id="linea59" class="form-control">
+            </div>
+            <br>
+
+
+            <p><b>Sexo</b></p>
+            <div>
+              <label class="form-check-label" for="muj">Mujer</label> &emsp; &nbsp;
+              <input type="checkbox" name="muj" id="muj" class="form-check-input" onchange="seleccion(26);">&emsp;<br>
+            </div>
+
+            <div>
+              <label class="form-check-label" for="hom">Hombre</label> &emsp;
+              <input type="checkbox" name="hom" id="hom" class="form-check-input" onchange="seleccion(27);">&emsp; <br>
+            </div><br>
+
+            <div class="form-group">
+              <label for="nac">Fecha de nacimiento</label>
+              <input type="date" name="nac" id="nac" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="edad">Edad</label>
+              <input type="num" name="edad" id="edad" class="form-control">
+            </div>
+
+            <p><b>¿Se identific&oacute con alg&uacuten documento?</b></p>
+            <div>
+              <label class="form-check-label" for="ine">Credencial INE</label> &emsp;
+              <input type="checkbox" name="ine" id="ine" onchange="seleccion(28);">&emsp;<br>
+            </div>
+
+            <div>
+              <label class="form-check-label" for="lice">Licencia</label> &emsp; &emsp; &emsp; &nbsp;
+              <input type="checkbox" name="lice" id="lice" onchange="seleccion(29);">&emsp;<br>
+            </div>
+
+            <div>
+              <label class="form-check-label" for="pas">Pasaporte</label> &emsp; &emsp; &nbsp;
+              <input type="checkbox" name="pas" id="pas" onchange="seleccion(30);">&emsp;<br>
+            </div>
+            <div class="form-group">
+              <label for="linea60">Otro</label>
+              <input type="text" name="linea60" id="linea60" maxlength="16">
+            </div>
+
+            <div>
+              <label class="form-check-label" for="no">No</label> &emsp; &emsp; &nbsp;
+              <input type="checkbox" name="no" id="no" onchange="seleccion(31);">&emsp;<br>
+            </div>
+
+            <div>
+              <label for="linea61">No. de identificaci&oacuten</label>
+              <input type="text" name="linea61" id="linea61" maxlength="23">
+            </div>
+
+            <!--Domicilio de la persona detenida-->
+            <p>
+              <h4><b></b>Domicilio de la persona detenida</b></h4>
+            </p>
+            <div>
+              <label for="linea62">Calle/Tramo carretero</label>
+              <input type="text" name="linea62" id="linea62" class="form-control">
+
+              <label for="linea63">No. exterior</label>
+              <input type="text" name="linea63" id="linea63">
+            </div>
+            <div>
+              <label for="linea64">No. interior</label>
+              <input type="text" name="linea64" id="linea64">
+              <label for="linea65">Codigo Postal</label>
+              <input type="number" name="linea65" id="linea65">
+            </div>
+
+            <div class="form-group">
+              <label for="linea66">Colonia/Localidad</label>
+              <input type="text" name="linea66" id="linea66">
+            </div>
+
+            <div clas="form-group">
+              <label for="linea67">Municipio/Demarcaci&oacuten territorial</label>
+              <input type="text" name="linea67" id="linea67">
+            </div>
+
+            <div class="form-group">
+              <label for="linea68">Entidad federativa</label>
+              <input type="text" name="linea68" id="linea68">
+            </div>
+
+            <div class="form-group">
+              <label for="linea69">Referencias</label>
+              <input type="text" name="linea69" id="linea69">
+            </div>
+            <br>
+
+            <div>
+              <i><label for="descripcionPerDet">Describa brevemente a la persona detenida, incluyendo tipo de vestimenta
+                  y rasgos
+                  visibles (barba, tatuajes, cicatrices, lunares, bigote, etc&eacutetera).</label></i><br>
+              <textarea rows="5" cols="110" type="text" name="descripcionPerDet" id="descripcionPerDet" maxlength="440"
+                class="form-control"></textarea>
+            </div>
+
+            <div>
+              <h6>
+                <p>¿La persona detenida presenta lesiones visibles?</p>
+              </h6>
+              <label for="lesionessi">Si</label>
+              <input type="checkbox" name="lesiones" id="lesiones" onchange="seleccion(32);">
+              &emsp;
+              <label for="lesionesno"></label>
+              <label for="padecimiento">No</label>
+              <input type="checkbox" name="lesionesno" id="lesionesno">
+            </div>
+
+            <div>
+              <h6>
+                <p>Manifiesta tener alg&uacuten padecimiento?</p>
+              </h6>
+              <label for="ManifiestaSi">Si</label>
+              <input type="checkbox" name="ManifiestaSi" id="ManifiestaSi">&emsp;
+              <label for="linea70">¿Cual?</label>
+              <input type="text" name="linea70" id="linea70">&emsp;
+              <label for="ManifiestaNo">No</label>
+              <input type="checkbox" name="ManifiestaNo" id="ManifiestaNo">
+            </div>
+
+            <div>
+              <h6>
+                <p>¿La persona detenida se identific&oacute como miembro de alg&uacuten grupo
+                  vulnerable?</p>
+              </h6>
+              <label for="vulnerableSi">Si</label>
+              <input type="checkbox" name="vulnerableSi" id="vulnerableSi">
+              &emsp;
+              <label for="linea71">¿Cual?</label>
+              <input type="text" name="linea71" id="linea71">
+
+              &emsp;
+              <label for="vulnerableNo">No</label>
+              <input type="checkbox" name="vulnerableNo" id="vulnerableNo">
+            </div>
+
+
+            <div>
+              <h6>
+                <p>¿La persona detenida se identific&oacute como miembro de alg&uacuten grupo
+                  delictivo?</p>
+              </h6>
+              <label for="delictivoSi">Si</label>
+              <input type="checkbox" name="delictivoSi" id="delictivoSi">
+              &emsp;
+              <label for="linea72">¿Cual?</label>
+              <input type="text" name="linea72" id="linea72" maxlength="31">
+              &emsp;
+              <label for="delictivoNo">No</label>
+              <input type="checkbox" name="delictivoNo" id="delictivoNo">
+            </div>
+
+            <p>
+              <h5 align="center">Apartado A.3 Datos del familiar o persona de confianza señalado por la persona
+                detenida
+              </h5>
+            </p>
+            <div class="form-group">
+              <label for="linea73">Primer apellido</label>
+              <input type="text" name="linea73" id="linea73">
+            </div>
+            <div class="form-group">
+              <label for="linea74">Segundo apellido</label>
+              <input type="text" name="linea74" id="linea74">
+            </div>
+
+            <div class="form-group">
+              <label for="linea75">Nombre(s)</label>
+              <input type="text" name="linea75" id="linea75">
+            </div>
+            <div>
+              <label for="linea76">No. telef&oacutenico</label>
+              <input type="number" name="linea76" id="linea76">
+            </div>
+            <div>
+              <label for="No_tel">No proporcionado</label>
+              <input type="checkbox" name="No_tel" id="No_tel" onchange="seleccion(36);">
+            </div>
+
+            <p>
+              <h5 align="center"> Apartado A.4 Constancia de lectura de derechos de la persona detenida</h5>
+            </p>
+            <p>
+              <h5>Articulo 20 apartado B de la constitucion politica de los Estados Unidos Mexicanos y articulo 152
+                del
+                Codigo Nacional de Procedimientos Penales</h5>
+            </p>
+            <p>
+              <h6>¿Le inform&oacute sus derechos a la persona detenida?</h6>
+            </p>
+            <div>
+              <label for="sider">Si</label>
+              <input type="checkbox" name="sider" id="sider" onchange="seleccionar(37);">
+            </div>
+            <div>
+              <label for="noder">No</label>
+              <input type="checkbox" name="noder" id="noder" onchange="seleccionar(38);">
+            </div>
+            <p>
+              <h5 align="center">Apartado A.5 Inspecci&oacuten a la persona detenida</h5>
+            </p>
+            <div>
+              <p>
+                <h6>Al momento de realizar la inspecci&oacuten a la persona detenida, ¿le encontr&oacute alg&uacuten
+                  objeto relacionado con los hechos?</h6>
+              </p>
+              <label for="objsi">Si</label> &emsp;
+              <input type="radio" name="ObjetosEncontrados" id="objsi" class="form-check-input" value="si"
+                onchange="seleccion(39);">&emsp;
+
+              <label for="objno">No</label>&emsp;
+              <input type="radio" name="ObjetosEncontrados" id="objno" class="form-check-input" value="no"
+                onchange="seleccion(40)">
+
+              <p>
+                <h9><i>Llene el anexo D</i></h9>
+              </p>
+            </div>
+            <div>
+              <p>¿Recolect&oacute pertenencias de la persona detenida?</p>
+              <label class="form-check-label" for="tabla">Si</label>&emsp; &emsp;
+              <input type="checkbox" name="tabla" id="tabla" class="form-check-input" onchange="seleccion(41);">
+
+              <div id="anexo41">
+                <p>
+                  <h6>Complete el siguiente cuadro</h6>
+                </p><br>
+                <label>Pertenencias</label> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; <label>Breve
+                  descripci&oacuten</label> &emsp; &emsp; &emsp; &emsp; &emsp; <label>Destino que se le
+                  dio</label><br>
+                <input type="text" name="linea77" id="linea77" placeholder="Pertenencia1" maxlength="20"> &emsp;
+                <input type="text" name="linea78" id="linea78" placeholder="Descripcion1" maxlength="27"> &emsp;
+                <input type="text" name="linea79" id="linea79" placeholder="Destino que se le dio1" maxlength="14"><br>
+
+                <input type="text" name="linea80" id="linea80" placeholder="Pertenencia2" maxlength="20"> &emsp;
+                <input type="text" name="linea81" id="linea81" placeholder="Descripcion2" maxlength="27"> &emsp;
+                <input type="text" name="linea82" id="linea82" placeholder="Destino que se le dio2" maxlength="14"><br>
+
+                <input type="text" name="linea83" id="linea83" placeholder="Pertenencia3" maxlength="20"> &emsp;
+                <input type="text" name="linea84" id="linea84" placeholder="Descripcion3" maxlength="27"> &emsp;
+                <input type="text" name="linea85" id="linea85" placeholder="Destino que se le dio3" maxlength="14"><br>
+
+                <input type="text" name="linea86" id="linea86" placeholder="Pertenencia4" maxlength="20"> &emsp;
+                <input type="text" name="linea87" id="linea87" placeholder="Descripcion4" maxlength="27"> &emsp;
+                <input type="text" name="linea88" id="linea88" placeholder="Destino que se le dio4" maxlength="14"><br>
+
+                <input type="text" name="linea89" id="linea89" placeholder="Pertenencia5" maxlength="20"> &emsp;
+                <input type="text" name="linea90" id="linea90" placeholder="Descripción5" maxlength="27"> &emsp;
+                <input type="text" name="linea91" id="linea91" placeholder="Destino que se le dio5" maxlength="14"><br>
+
+                <input type="text" name="linea92" id="linea92" placeholder="Pertenencia6" maxlength="20"> &emsp;
+                <input type="text" name="linea93" id="linea93" placeholder="Descripción6" maxlength="27"> &emsp;
+                <input type="text" name="linea94" id="linea94" placeholder="Destino que se le dio6" maxlength="14"><br>
+
+                <input type="text" name="linea95" id="linea95" placeholder="Pertenencia7" maxlength="20"> &emsp;
+                <input type="text" name="linea96" id="linea96" placeholder="Descripción7" maxlength="27"> &emsp;
+                <input type="text" name="linea97" id="linea97" placeholder="Destino que se le dio7" maxlength="14"><br>
+
+                <input type="text" name="linea98" id="linea98" placeholder="Pertenencia8" maxlength="20"> &emsp;
+                <input type="text" name="linea99" id="linea99" placeholder="Descripción8" maxlength="27"> &emsp;
+                <input type="text" name="linea100" id="linea100" placeholder="Destino que se le dio8"
+                  maxlength="14"><br>
+
+                <input type="text" name="linea101" id="linea101" placeholder="Pertenencia9" maxlength="20"> &emsp;
+                <input type="text" name="linea102" id="linea102" placeholder="Descripción9" maxlength="27"> &emsp;
+                <input type="text" name="linea103" id="linea103" placeholder="Destino que se le dio9"
+                  maxlength="14"><br>
+
+                <input type="text" name="linea104" id="linea104" placeholder="Pertenencia10" maxlength="20"> &emsp;
+                <input type="text" name="linea105" id="linea105" placeholder="Descripción10" maxlength="27"> &emsp;
+                <input type="text" name="linea106" id="linea106" placeholder="Destino que se le dio10" maxlength="14">
+              </div>
+            </div>
+
+            <div>
+              <label for="pertenenciasNo">No</label>
+              <input type="checkbox" name="pertenenciasNo" id="pertenenciasNo" onchange="seleccion(42);">
+            </div>
+
+            <p>
+              <h5 align="center">Apartado A.6 Datos del lugar de la detenci&oacuten</h5>
+            </p>
+            <div>
+              <p>
+                <h6>¿El lugar de la detenci&oacuten es el mismo que el de la intervenci&oacuten?</h6>
+              </p>
+              <label for="dire">Si</label>&emsp;
+              <input type="checkbox" name="dire" id="dire" value="si" onchange="seleccion(43);">
+            </div>
+            <div>
+              <label class="form-check-label" for="direNo">No</label>&emsp; &emsp;
+              <input type="checkbox" name="dire" id="direNo" value="no" class="form-check-input"
+                onchange="seleccion(44);">
+
+              <div id="anexo44">
+                <div>
+                  <label for="linea107">Calle/Tramo carretero</label>
+                  <input type="text" name="linea107" id="linea107">
+                  <label for="linea108">No. exterior</label>
+                  <input type="text" name="linea108" id="linea108">
+                </div>
+                <div>
+                  <label for="linea109">No. interior</label>
+                  <input type="text" name="linea109" id="linea109">
+                  <label for="linea110">Codigo Postal</label>
+                  <input type="number" name="linea110" id="linea110">
+                </div>
+
+                <div class="form-group">
+                  <label for="linea111">Colonia/Localidad</label>
+                  <input type="text" name="linea111" id="linea111">
+                </div>
+                <div clas="form-group">
+                  <label for="linea112">Municipio/Demarcaci&oacuten territorial</label>
+                  <input type="text" name="linea112" id="linea112">
+                </div>
+                <div class="form-group">
+                  <label for="linea113">Entidad federativa</label>
+                  <input type="text" name="linea113" id="linea113">
+                </div>
+                <div class="form-group">
+                  <label for="linea114">Referencias</label>
+                  <input type="text" name="linea114" id="linea114">
+                </div>
+              </div>
+            </div>
+
+            <p align="center">
+              <h5>Apartado A.7 Datos del lugar del trasladado de la persona detenida</h5>
+            </p>
+            <div>
+              <label for="traslado">
+                <input type="checkbox" name="fisAge" value="1" id="fisAge">Fiscalia/Agencia&emsp; &emsp;
+              </label>
+              <label>
+                <input type="checkbox" name="hos" value="2" id="hos">Hospital&emsp; &emsp;
+              </label>
+
+              <input type="checkbox" name="otraDep" value="3" id="otraDep" onchange="seleccion(52);">
+              <label for="otraDep">Otra dependencia&emsp; &emsp;</label>
+
+              <div id="anexo52">
+                <label for="linea115">¿Cual?</label>
+                <input type="text" name="linea115" id="linea115">
+              </div>
+            </div>
+            <br>
+
+            <p>
+              <h5><b>Observaciones relacionadas con la detenci&oacuten</b></h5>
+            </p>
+            <div>
+              <i><label for="linea116">Describa brevemente la ruta y el medio de traslado desde el lugar de la
+                  detenci&oacuten hasta la puesta a disposici&oacuten, asi como la razon de posibles demoras. Incluya
+                  cualquier otra observaci&oacuten que considere relevante</label></i><br>
+              <textarea rows="5" cols="110" type="text" name="linea116" id="linea116" maxlength="450"
+                class="form-control"></textarea>
+            </div>
+
+            <p align="center">
+              <h5>Apartado A.8 Datos del primer respondiente que realiz&oacute la detenci&oacuten</h5>
+            </p>
+
+            <div>
+              <label for="linea117">Primer apellido</label>
+              <input type="text" name="linea117" id="linea117">&emsp;
+
+              <label for="linea118">Segundo apellido</label>
+              <input type="text" name="linea118" id="linea118">&emsp;
+
+              <label for="linea119">Nombre(s)</label>
+              <input type="text" name="linea119" id="linea119">
+            </div>
+
+            <div>
+              <label for="linea120">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="linea120" id="linea120">&emsp;
+
+              <label for="linea121">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="tex" name="linea121" id="linea121">&emsp;
+            </div>
+
+            <p>primer respondiente 2</p>
+            <div>
+              <label for="linea122">Primer apellido</label>
+              <input type="text" name="linea122" id="linea122">&emsp;
+
+              <label for="linea123">Segundo apellido</label>
+              <input type="text" name="linea123" id="linea123">&emsp;
+
+              <label for="linea124">Nombre(s)</label>
+              <input type="text" name="linea124" id="linea124">
+            </div>
+
+            <div>
+              <label for="linea125">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="linea125" id="linea125">&emsp;
+
+              <label for="linea126">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="text" name="linea126" id="linea126">&emsp;
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoB">Incluir anexo B</label> &emsp;
+            <input type="checkbox" name="anexoB" id="anexoB" class="form-check-input" onchange="seleccion(2);">&emsp;
+          </div>
+
+          <div id="anexo2">
+            <div align="center">
+              <h2>
+                <b>
+                  <p align="center">ANEXO B. INFORME DEL USO DE LA FUERZA</p>
+                </b>
+              </h2>
+            </div>
+            <h6><i>'Llene este Anexo s&oacutelo de lesionados y/o fallecidos con motivo del uso de la fuerza'</i>
+            </h6>
+            </p>
+            <div class="form-group">
+              <label for="linea16">Informe del uso de la fuerza (¿Cuantas personas?)(001, 002,...010)</label>
+              <input type="text" name="linea16" id="linea16" class="form-control" maxlength="3">
+            </div>
+            <p>
+              <h5>Apartado B.1 Niveles del uso de la fuerza</h5>
+            </p>
+            <p>Indique cu&aacutentos</p>
+
+
+            <table>
+              <tbody>
+                <tr>
+                  <th></th>
+                  <td>&emsp; &emsp;&emsp;&emsp;<strong>AUTORIDAD</strong></td>
+                  <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>PERSONA</strong></td>
+                </tr>
+                <tr>
+                  <td>Lesionados</td>
+                  <td>&emsp;<input type="checkbox" name="lesionadosAut" id="lesionadosAut">
+                    <input type="text" name="lesAut" id="lesAut">
+                  </td>
+                  <td>&emsp;&emsp;<input type="checkbox" name="lesionadosPer" id="lesionadosPer">
+                    <input type="text" name="lesPer" id="lesPer">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Fallecidos</td>
+                  <td>&emsp;<input type="checkbox" name="fallesidosAut" id="fallesidosAut"> <input type="text"
+                      name="fallAut" id="fallAut"></td>
+                  <td>&emsp;&emsp;<input type="checkbox" name="fallesidosPer" id="fallesidosPer"> <input type="text"
+                      name="fallPer" id="fallPer"></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <p>
+              <h6><i>Selecciones con una "X" seg&uacuten corresponda:</i></h6>
+            </p>
+            <label for="rfm">Reducci&oacuten f&iacutesica de movimientos</label>
+            <input type="checkbox" name="rfm" id="rfm"> &emsp;
+            <label for="uaiml">Utilizaci&oacuten de armas incapacitantes menos letales</label>
+            <input type="checkbox" name="uaiml" id="uaiml">&emsp;
+            <label for="uaffl">Utilizaci&oacuten de armas de fuego o fuerza letal</label>
+            <input type="checkbox" name="uaffl" id="uaffl">
+            <br> <br>
+
+            <div>
+              <h6><i><label for="linea127">Describa las conductas (resistencia activa y de alta peligrosidad) que
+                    motivaron
+                    el uso de la fuerza:</label></i></h6>
+              <textarea rows="12" cols="110" type="text" name="linea127" id="linea127" maxlength="991"></textarea>
+            </div>
+            <br>
+
+            <div>
+              <label>¿Brind&oacute o solicit&oacute asistencia m&eacutedica?</label>
+              &emsp;
+              <label>Si</label>
+              <input type="checkbox" name="bsamSi" id="bsamSi">
+              &emsp;
+              <label>No</label>
+              <input type="checkbox" name="bsamNo" id="bsamNo">
+            </div>
+
+            <label for="expl">Explique</label><br>
+            <textarea rows="7" cols="110" type="text" name="expl" id="expl" maxlength="630"></textarea>
+            <br>
+            <p>
+              <h5 align="center">Apartado B.2 Datos del primer respondiente que realiz&oacute el informe del uso de
+                la
+                fuerza, sol&oacute
+                si es diferente a quien firm&oacute la apuesta a disposici&oacuten</h5>
+            </p>
+            <div>
+              <label for="linea128">Primer apellido</label>
+              <input type="text" name="linea128" id="linea128">&emsp;
+
+              <label for="linea129">Segundo apellido</label>
+              <input type="text" name="linea129" id="linea129">&emsp;
+
+              <label for="linea130">Nombre(s)</label>
+              <input type="text" name="linea130" id="linea130">
+            </div>
+
+            <div>
+              <label for="linea131">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="linea131" id="linea131">&emsp;
+
+              <label for="linea132">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="tex" name="linea132" id="linea132">&emsp;
+            </div>
+
+            <p>primer respondiente 2</p>
+            <div>
+              <label for="linea133">Primer apellido</label>
+              <input type="text" name="linea133" id="linea133">&emsp;
+
+              <label for="linea134">Segundo apellido</label>
+              <input type="text" name="linea134" id="linea134">&emsp;
+
+              <label for="linea135">Nombre(s)</label>
+              <input type="text" name="linea135" id="linea135">
+            </div>
+
+            <div>
+              <label for="linea136">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="linea136" id="linea136">&emsp;
+
+              <label for="linea137">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="text" name="linea137" id="linea137">&emsp;
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoC">Incluir anexo C</label> &emsp;
+            <input type="checkbox" name="anexoC" id="anexoC" class="form-check-input" onchange="seleccion(3);">&emsp;
+          </div>
+
+
+          <div id="anexo3">
+
+            <h2>
+              <p align="center">ANEXO C. INSPECCION DEL VEHICULO</p>
+            </h2>
+
+            <div class="form-group">
+              <label for="linea17">Inspeccion de vehiculo</label>
+              <input type="text" name="linea17" id="linea17" class="form-control" maxlength="3">
+            </div>
+            <h5>
+              <p align="center">
+                Apartado C.1 Fecha y hora de la inspecci&oacuten
+              </p>
+            </h5>
+
+            <div class="form-group">
+              <label for="fecC1">Fecha</label>
+              <input type="date" name="fecC1" id="fecC1" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="horC1">Hr</label>
+              <input type="time" name="horC1" id="horC1" class="form-control">
+            </div>
+
+            <h5>
+              <p align="center">
+                Apartado C.2 Datos generales del veh&iacuteculo inspeccionado
+              </p>
+            </h5>
+
+            <table border>
+
+
+              <tr>
+                <td>
+                  <p>Tipo:</p>
+                  <label>terrestre</label>
+                  <input type="checkbox" name="terrestre" id="terrestre"> &emsp;
+                  <label for="acuatic">acuatico</label>
+                  <input type="checkbox" name="acuatic" id="acuatic"> &emsp;
+                  <label>a&eacutereo</label>
+                  <input type="checkbox" name="aereo" id="aereo">
+                </td>
+                <td>
+                  <p>Procedencia:</p>
+                  <label>Nacional</label>
+                  <input type="checkbox" name="nacional" id="nacional"> &emsp;
+                  <label>Extranjero</label>
+                  <input type="checkbox" name="extranjero" id="extranjero">
+                </td>
+              </tr>
+            </table>
+            <br>
+
+            <label for="Marca">Marca</label>
+            <input type="text" name="marca" id="marca">
+            <label for="submarca">Submarca</label>
+            <input type="text" name="submarca" id="submarca">&emsp;
+            <label for="modelo">Modelo</label>
+            <input type="text" name="modelo" id="modelo" maxlength="4">&emsp;
+            <label for="color">Color</label>
+            <input type="text" name="color" id="color">
+            <br><br>
+
+            <h6>
+              <p>Uso</p>
+            </h6>
+            <label>Particular</label>
+            <input type="checkbox" name="particular" id="particular"> &emsp;
+            <label>Transporte p&uacuteblico</label>
+            <input type="checkbox" name="tp" id="tp">&emsp;
+            <label>Cargo</label>
+            <input type="checkbox" name="cargo" id="cargo"> &emsp;
+            <br>
+
+            <label for="plaMa">Placa/Matricula</label>
+            <input type="text" name="plaMa" id="plaMa" maxlength="8">
+            &emsp;
+            <label for="serie1">No. de serie</label>
+            <input type="text" name="serie1" id="serie1" maxlength="18">
+            <br><br>
+
+            <h6>
+              <p>Situaci&oacuten</p>
+            </h6>
+            <label for="reporteRob">Con reporte de robo</label>
+            <input type="checkbox" name="reporteRob" id="reporteRob"> &emsp;
+            <label for="srr">Sin reporte de robo</label>
+            <input type="checkbox" name="srr" id="srr"> &emsp;
+            <label for="nps">No es posible saberlo</label>
+            <input type="checkbox" name="nps" id="nps">
+            <br><br>
+
+            <label for="Observaciones">Observaciones</label><br>
+            <textarea name="Observaciones" id="Observaciones" cols="100" rows="4" maxlength="270"></textarea><br>
+
+            <label for="dqsld">Destino que se le dio</label><br>
+            <textarea name="dqsld" id="dqsld" cols="100" rows="2" maxlength="120"></textarea>
+            <br><br>
+            <h5>
+              <p align="center">
+                Apartado C.3 Objetos encontrados en el vehiculo inspeccionado
+              </p>
+            </h5>
+            <h6>
+              <p>¿Econtr&oacute objetos relacionados con los hechos</p>
+            </h6>
+
+            <label>Si</label>&nbsp;&nbsp;
+            <input type="checkbox" name="eorclhSi" id="eorclhSi" &nbsp; <p>Llene el Anexo D</p>
+            <label>No</label>
+            <input type="checkbox" name="eorclhNo" id="eorclhNo">
+            <br><br>
+
+            <h5>
+              <p align="center">Apartado C.4 Datos del primer respondiente que realizo la inspecci&oacute s&oacutelo
+                si es diferente
+                a quien confirm&oacute la puesta a disposici&oacuten</p>
+            </h5>
+            <div>
+              <label for="linea138">Primer apellido</label>
+              <input type="text" name="linea138" id="linea138">&emsp;
+
+              <label for="linea139">Segundo apellido</label>
+              <input type="text" name="linea139" id="linea139">&emsp;
+
+              <label for="linea140">Nombre(s)</label>
+              <input type="text" name="linea140" id="linea140">
+            </div>
+
+            <div>
+              <label for="linea141">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="linea141" id="linea141">&emsp;
+
+              <label for="linea142">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="tex" name="linea142" id="linea142">&emsp;
+            </div>
+
+            <p>primer respondiente 2</p>
+            <div>
+              <label for="linea143">Primer apellido</label>
+              <input type="text" name="linea143" id="linea143">&emsp;
+
+              <label for="linea144">Segundo apellido</label>
+              <input type="text" name="linea144" id="linea144">&emsp;
+
+              <label for="linea145">Nombre(s)</label>
+              <input type="text" name="linea145" id="linea145">
+            </div>
+            <div>
+              <label for="linea146">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="linea146" id="linea146">&emsp;
+
+              <label for="linea147">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="tex" name="linea147" id="linea147">&emsp;
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoD">Incluir anexo D</label> &emsp;
+            <input type="checkbox" name="anexoD" id="anexoD" class="form-check-input" onchange="seleccion(4);">&emsp;
+          </div>
+
+
+          <div id="anexo4">
+            <h2>
+              <p align="center">ANEXO D</p>
+            </h2>
+            <h6>
+              <p>Llene tantas veces como sea necesario este Anexo</p>
+            </h6>
+            <h5>
+              <p align="center">Apartado D.1 Registro de armas de fuego</p>
+            </h5>
+            <div class="form-group">
+              <label for="linea1000">Arma de fuego</label>
+              <input type="text" name="linea1000" id="linea1000" class="form-control" maxlength="3">
+            </div>
+
+            <h6>
+              <p>Seleccione con una "X" si se trata de aportaci&oacuten o inspecci&oacuten, seg&uacuten corresponda.
+              </p>
+            </h6>
+            <label>Aportaci&oacuten</label>
+            <input type="checkbox" name="aportacion" id="aportacion">
+
+            <h6>
+              <p>Inspecci&oacuten:</p>
+            </h6>
+            <label for="lugar">Lugar</label>
+            <input type="checkbox" name="lugar" id="lugar">
+            &emsp;
+            <label for="pers">Persona</label>
+            <input type="checkbox" name="pers" id="pers">
+            &emsp;
+            <label for="vehic">Veh&iacuteculo</label>
+            <input type="checkbox" name="vehic" id="vehic">
+            &emsp;
+            <label for="dea">¿Donde encontro el arma?</label>
+            <input type="text" name="dea" id="dea">
+            <br>
+            <h6>
+              <p>Tipo de arma:</p>
+            </h6>
+            <label for="corta">Corta</label>
+            <input type="checkbox" name="corta" id="corta">&emsp;
+            <label for="larga">Larga</label>
+            <input type="checkbox" name="larga" id="larga">&emsp;
+
+            <label for="calibre">Calibre:</label>
+            <input type="text" name="calibre" id="calibre">
+            <label for="color">Color:</label>
+            <input type="text" name="color" id="color"><br>
+            <br>
+            <label for="matricula">Matricula</label>
+            <input type="text" name="matricula" id="matricula" maxlength="7">&emsp;
+            <label for="serie">No. de serie</label>
+            <input type="text" name="serie" id="serie" maxlength="19"><br><br>
+
+            <label>Observaciones (de ser el caso, señale adem&aacutes, caracteristicas, marca, cargadores y
+              cartuchos):</label>
+            <br>
+            <textarea name="obs" id="obs" cols="100" rows="2" maxlength="180"></textarea>
+            <br><br>
+
+            <label>Destino que se le dio:</label>
+            <br>
+            <textarea name="dest" id="dest" cols="100" rows="2" maxlength="150"></textarea>
+            <br><br>
+
+            <h6>
+              <p>Anote el nombre y firma de la persona a la que se le asegur&oacute el arma:</p>
+            </h6>
+            <div>
+              <label for="linead1">Primer apellido</label>
+              <input type="text" name="linead1" id="linead1">
+              &emsp;
+              <label for="linead2">Segundo apellido</label>
+              <input type="text" name="linead2" id="linead2">
+              &emsp;
+              <label for="linead3">Nombre(s)</label>
+              <input type="text" name="linead3" id="linead3">
+            </div>
+            <br>
+            <h6>
+              <p>En caso de que la persona a la que se le asegur&oacute el arma no accede a firmar, anote nombre y
+                firma
+                de dos testigos:</p>
+            </h6>
+            <div>
+              <label for="linead4">Primer apellido</label>
+              <input type="text" name="linead4" id="linead4">
+              &emsp;
+              <label for="linead5">Segundo apellido</label>
+              <input type="text" name="linead5" id="linead5">
+              &emsp;
+              <label for="linead6">Nombre(s)</label>
+              <input type="text" name="linead6" id="linead6">
+            </div>
+
+            <div>
+              <label for="linead7">Primer apellido</label>
+              <input type="text" name="linead7" id="linead7">
+              &emsp;
+              <label for="linead8">Segundo apellido</label>
+              <input type="text" name="linead8" id="linead8">
+              &emsp;
+              <label for="linead9">Nombre(s)</label>
+              <input type="text" name="linead9" id="linead9">
+            </div><br><br>
+
+            <div class="form-group">
+              <label for="linea18">Arma de fuego:</label>
+              <input type="text" name="linea18" id="linea18" class="form-control" maxlength="3">
+            </div>
+            <h6>
+              <p>Seleccione con una "X" si se trata de aportaci&oacuten o inspecci&oacuten, seg&uacuten corresponda.
+              </p>
+            </h6>
+            <label>Aportaci&oacuten</label>
+            <input type="checkbox" name="aportacion2" id="aportacion2">
+
+            <h6>
+              <p>Inspecci&oacuten:</p>
+            </h6>
+            <label for="lugar2">Lugar</label>
+            <input type="checkbox" name="lugar2" id="lugar2">
+            &emsp;
+            <label for="pers2">Persona</label>
+            <input type="checkbox" name="pers2" id="pers2">
+            &emsp;
+            <label for="vehic2">Veh&iacuteculo</label>
+            <input type="checkbox" name="vehic2" id="vehic2">
+            &emsp;
+            <label for="dea2">¿Donde encontro el arma?</label>
+            <input type="text" name="dea2" id="dea2">
+            <br>
+
+            <h6>
+              <p>Tipo de arma:</p>
+            </h6>
+            <label for="corta2">Corta</label>
+            <input type="checkbox" name="corta2" id="corta2">&emsp;
+            <label for="larga2">Larga</label>
+            <input type="checkbox" name="larga2" id="larga2">&emsp;
+
+            <label for="calibre2">Calibre:</label>
+            <input type="text" name="calibre2" id="calibre2">&emsp;
+            <label for="color2">Color:</label>
+            <input type="text" name="color2" id="color2"><br>
+            <br>
+            <label for="matricula2">Matricula</label>
+            <input type="text" name="matricula2" id="matricula2" maxlength="7">&emsp;
+            <label for="serie2">No. de serie</label>
+            <input type="text" name="serie2" id="serie2" maxlength="19"><br><br>
+
+            <label>Observaciones (de ser el caso, señale adem&aacutes, caracteristicas, marca, cargadores y
+              cartuchos):</label><br>
+            <textarea name="obs2" id="obs2" cols="100" rows="2" maxlength="170"></textarea>
+            <br><br>
+
+            <label>Destino que se le dio2:</label><br>
+            <textarea name="dest2" id="dest2" cols="100" rows="2" maxlength="150"></textarea>
+            <br><br>
+            <h6>
+              <p>Anote el nombre y firma de la persona a la que se le asegur&oacute el arma:</p>
+            </h6>
+            <div>
+              <label for="linead10">Primer apellido</label>
+              <input type="text" name="linead10" id="linead10">
+              &emsp;
+              <label for="linead11">Segundo apellido</label>
+              <input type="text" name="linead11" id="linead11">
+              &emsp;
+              <label for="linead12">Nombre(s)</label>
+              <input type="text" name="linead12" id="linead12">
+            </div>
+            <br>
+            <h6>
+              <p>En caso de que la persona a la que se le asegur&oacute el arma no accede a firmar, anote nombre y
+                firma
+                de dos testigos:</p>
+            </h6>
+            <div>
+              <label for="linead13">Primer apellido</label>
+              <input type="text" name="linead13" id="linead13">
+              &emsp;
+              <label for="linead14">Segundo apellido</label>
+              <input type="text" name="linead14" id="linead14">
+              &emsp;
+              <label for="linead15">Nombre(s)</label>
+              <input type="text" name="linead15" id="linead15">
+            </div>
+
+            <div>
+              <label for="linead16">Primer apellido</label>
+              <input type="text" name="linead16" id="linead16">
+              &emsp;
+              <label for="linead17">Segundo apellido</label>
+              <input type="text" name="linead17" id="linead17">
+              &emsp;
+              <label for="linead18">Nombre(s)</label>
+              <input type="text" name="linead18" id="linead18">
+            </div>
+            <br><br>
+            <h5>
+              <p align="center">Apartado D.2 Datos del primer respondiente que realiz&oacute la recolecci&oacuten y/o
+                aseguramiento de
+                la o las armas, s&oacutelo si es diferente a quien firm&oacute la puesta a disposici&oacuten</p>
+            </h5>
+            <div>
+              <label>Primer apellido</label>
+              <input type="text" name="linead19" id="linead19">&emsp;
+
+              <label>Segundo apellido</label>
+              <input type="text" name="linead20" id="linead20">&emsp;
+
+              <label>Nombre(s)</label>
+              <input type="text" name="linead21" id="linead21">&emsp;
+            </div>
+
+            <div>
+              <label>Adscripci&oacuten:</label>&emsp;
+              <input type="text" name="linead22" id="linead22">&emsp;
+
+              <label>Cargo/grado:</label>&emsp; &emsp;
+              <input type="text" name="linead23" id="linead23">
+            </div>
+
+            <br><br>
+            <h5>
+              <p align="center">Apartado D.3 Registro de objetos recolectados y/o asegurados relacionados con el echo
+                probablemente delictivo</p>
+            </h5>
+
+            <h6>
+              <p align="center">¿Qu&eacute encontr&oacute? (apariencia de):</p>
+            </h6>
+            <label>Narc&oacutetico</label>
+            <input type="checkbox" name="narcotico" id="narcotico">
+            &emsp;
+            <label>Hidrocarburo</label>
+            <input type="checkbox" name="hidrocarburo" id="hidrocarburo">
+            &emsp;
+            <label>Numerario</label>
+            <input type="checkbox" name="numerario" id="numerario">
+            &emsp;
+            <label>Otro</label>
+            <input type="text" name="otro" id="otro">
+            <br><br>
+
+            <h6>
+              <p>Seleccione con una "X" si se trata de aportaci&oacuten o inspecci&oacuten, seg&uacuten corresponda.
+              </p>
+            </h6>
+            <label>Aportaci&oacuten</label>
+            <input type="checkbox" name="aportaciond3" id="aportaciond3">
+            <h6>
+              <p>Inspecci&oacuten:</p>
+            </h6>
+            <label for="lugard3">Lugar</label>
+            <input type="checkbox" name="lugard3" id="lugard3">
+            &emsp;
+            <label for="persd3">Persona</label>
+            <input type="checkbox" name="persd3" id="persd3">
+            &emsp;
+            <label for="vehicd3">Veh&iacuteculo</label>
+            <input type="checkbox" name="vehicd3" id="vehicd3">
+            &emsp;
+            <label for="dead3">¿Donde encontro el objeto?</label>
+            <input type="text" name="dead3" id="dead3">
+            <br><br>
+
+            <table border>
+              <tr>
+                <td>
+                  <label>Breve descripcion del objeto:</label><br>
+                  <textarea name="bdo1" id="bdo1" cols="30" rows="10" maxlength="98"></textarea>
+                </td>
+                <td>
+                  <label>Destino que se le dio:</label><br>
+                  <textarea name="dd" id="dd" cols="30" rows="10" maxlength="147"></textarea>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+
+            <h6>
+              <p align="center">Anote el nombre y firma de la persona a la que se le asegur&oacute el objeto:</p>
+            </h6>
+            <label>Primer apellido</label>
+            <input type="text" name="linead24" id="linead24">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead25" id="linead25">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead26" id="linea26">
+            <br><br>
+            <h6>
+              <p align="center">En caso de que la persona a la que se le aseguró el objeto no acceda a firmar, anote
+                nombre y firma de dos testigos:</p>
+            </h6>
+            <label>Primer apellido</label>
+            <input type="text" name="linead27" id="linead27">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead28" id="linead28">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead29" id="linea29">
+            <br>
+            <label>Primer apellido</label>
+            <input type="text" name="linead30" id="linead30">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead31" id="linead31">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead32" id="linead32">
+            <br>
+            <br><br>
+
+            <h6>
+              <p align="center">¿Qu&eacute encontr&oacute? (apariencia de):</p>
+            </h6>
+            <label>Narc&oacutetico</label>
+            <input type="checkbox" name="narcotico2" id="narcotico2">
+            &emsp;
+            <label>Hidrocarburo</label>
+            <input type="checkbox" name="hidrocarburo2" id="hidrocarburo2">
+            &emsp;
+            <label>Numerario</label>
+            <input type="checkbox" name="numerario2" id="numerario2">
+            &emsp;
+            <label>Otro</label>
+            <input type="text" name="otro2" id="otro2">
+            <br><br>
+
+            <h6>
+              <p>Seleccione con una "X" si se trata de aportaci&oacuten o inspecci&oacuten, seg&uacuten corresponda.
+              </p>
+            </h6>
+            <label>Aportaci&oacuten</label>
+            <input type="checkbox" name="aportaciond32" id="aportaciond32">
+            <h6>
+              <p>Inspecci&oacuten:</p>
+            </h6>
+            <label for="lugard32">Lugar</label>
+            <input type="checkbox" name="lugard32" id="lugard32">
+            &emsp;
+            <label for="persd32">Persona</label>
+            <input type="checkbox" name="persd32" id="persd32">
+            &emsp;
+            <label for="vehicd32">Veh&iacuteculo</label>
+            <input type="checkbox" name="vehicd32" id="vehicd32">
+            &emsp;
+            <label for="dead32">Donde encontro el objeto</label>
+            <input type="text" name="dead32" id="dead32">
+            <br><br>
+
+            <table border>
+              <tr>
+                <td>
+                  <label>Breve descripcion del objeto:</label><br>
+                  <textarea name="bdo2" id="bdo2" cols="85" rows="3" maxlength="162"></textarea>
+                </td>
+                <td>
+                  <label>Destino que se le dio:</label><br>
+                  <textarea name="dd2" id="dd2" cols="30" rows="10" maxlength="108"></textarea>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+
+            <h6>
+              <p align="center">Anote el nombre y firma de la persona a la que se le asegur&oacute el objeto:</p>
+            </h6>
+            <label>Primer apellido</label>
+            <input type="text" name="linead38" id="linead38">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead39" id="linead39">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead40" id="linead40">
+            <br><br>
+            <h6>
+              <p align="center">En caso de que la persona a la que se le aseguró el objeto no acceda a firmar, anote
+                nombre y firma de dos testigos:</p>
+            </h6>
+            <label>Primer apellido</label>
+            <input type="text" name="linead41" id="linead41">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead42" id="linead42">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead43" id="linead43">
+            <br>
+            <label>Primer apellido</label>
+            <input type="text" name="linead44" id="linead44">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead45" id="linead45">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead46" id="linead46">
+            <br>
+
+            <br>
+            <br>
+            <h5>
+              <p align="center">Apartado D.4 del primer respondiente que realiz&oacute la colecci&oacuten y/o
+                aseguramiento del o los objetos, s&oacutelo si es diferente a quien firm&oacute la apuesta a
+                disposici&oacuten</p>
+            </h5>
+            <label>Primer apellido</label>
+            <input type="text" name="linead33" id="linead33">&emsp;
+            <label>Segundo apellido</label>
+            <input type="text" name="linead34" id="linead34">&emsp;
+            <label>Nombre(s)</label>
+            <input type="text" name="linead35" id="linead35">
+            <br>
+            <label>Adscripci&oacuten</label>&emsp;&nbsp;&nbsp;
+            <input type="text" name="linead36" id="linead36">&emsp;
+            <label>Cargo/grado</label>&emsp;&emsp;
+            <input type="text" name="linead37" id="linead37">
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoE">Incluir anexo E</label> &emsp;
+            <input type="checkbox" name="anexoE" id="anexoE" class="form-check-input" onchange="seleccion(5);">&emsp;
+          </div>
+
+
+          <div id="anexo5">
+            <h2>
+              <p align="center">ANEXO E. ENTREVISTAS</p>
+            </h2>
+            <div class="form-group">
+              <label for="linea19">Personas entrevistadas:</label>
+              <h6>
+                <p><i>(001, 002,..., 010,...,)</i></p>
+              </h6>
+              <input type="text" name="linea19" id="linea19" class="form-control" maxlength="3">
+            </div>
+
+            <h6>
+              <p>¿Desea reservar sus datos?</p>
+            </h6>
+            <div>
+              <label for="reservarDatSi">Si</label>
+              <input type="checkbox" name="reservarDatSi" id="reservarDatSi">
+              &emsp;
+              <label for="reservarDatNo">No</label>
+              <input type="checkbox" name="reservarDatNo" id="reservarDatNo">
+            </div>
+            <br>
+            <!--Apartado E.1 Fecha y hora del lugar de la entrevista-->
+            <h5>
+              <p align="center">Apartado E.1 Fecha y hora del lugar de la entrevista</p>
+            </h5>
+            <h6>
+              <p>Indique la fecha y la hora en que se realiz&oacute la entrevista:</p>
+            </h6>
+            <label for="lineae1">Fecha</label>
+            <input type="date" name="lineae1" id="lineae1" class="form-control" maxlength=15>
+
+            <div class="form-group">
+              <label for="lineae2">Hora</label>
+              <input type="time" name="lineae2" id="lineae2" class="form-control">
+            </div>
+            <br>
+
+            <h5>
+              <p align="center">Apartado E.2 Datos generales</p>
+            </h5>
+            <div>
+              <label for="lineae3">Primer Apellido</label>
+              <input type="text" name="lineae3" id="lineae3">
+
+              <label for="lineae4">Segundo apellido</label>
+              <input type="text" name="lineae4" id="lineae4">
+
+              <label for="lineae5">Nombre(s)</label>
+              <input type="text" name="lineae5" id="lineae5">
+            </div>
+
+            <h6>
+              <p>Indique seg&uacuten corresponde:</p>
+            </h6>
+            <br>
+            <div>
+              <p>Calidad:</p>
+              <label for="VicOfe">Victima u ofendido</label>
+              <input type="checkbox" name="VicOfe" id="VicOfe">
+              &emsp;
+              <label for="denunciante">Denunciante</label>
+              <input type="checkbox" name="denunciante" id="denunciante">
+              &emsp;
+              <label for="testigo">Testigo</label>
+              <input type="checkbox" name="testigo" id="testigo">
+            </div>
+
+            <br>
+            <div>
+              <p>Nacionalidad:</p>
+              <label for="mexicanaE">Mexicana</label>
+              <input type="checkbox" name="mexicanaE" id="mexicanaE">
+              &emsp;
+
+              <label class="form-check-label" for="extranjeraE">Extranjero</label>&emsp;&nbsp;
+              <input type="checkbox" name="extranjeraE" id="extranjeraE" class="form-check-input"
+                onchange="seleccion(52);">
+            </div>
+            <div id="extranjeraE52">
+              <label class="form-check-label" for="cualE">¿Cu&aacutel?</label>
+              <input type="text" name="cualE" id="cualE" class="form-control">
+            </div>
+
+            <br>
+
+            <div>
+              <p>Sexo:</p>
+              <label for="mujerE">Mujer</label>
+              <input type="checkbox" name="mujerE" id="mujerE">
+              &emsp;
+              <label for="hombreE">Hombre</label>
+              <input type="checkbox" name="hombreE" id="hombreE">
+              &emsp;
+            </div>
+            <br>
+            <div>
+              <label for="lineae6">Fecha de nacimiento</label>
+              <input type="date" name="lineae6" id="lineae6">&emsp;
+              <label for="lineae7">Edad</label>
+              <input type="text" name="lineae7" id="lineae7" maxlength="2">
+            </div>
+            <br>
+            <div>
+              <h6>
+                <p>¿Se identific&oacute con alg&uacuten documento?</p>
+              </h6>
+              <label>Credenciales INE</label>
+              <input type="checkbox" name="credINE" id="credINE">
+              &emsp;
+              <label>Licencia</label>
+              <input type="checkbox" name="licenciaE" id="licenciaE">
+              &emsp;
+              <label>Pasaporte</label>
+              <input type="checkbox" name="pasaporteE" id="pasaporteE">
+              &emsp;
+              <label for="otroE">Otro</label>
+              <input type="text" name="otroE" id="otroE">
+              &emsp;
+              <label>No</label>
+              <input type="checkbox" name="noE" id="noE">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="lineae8">No. de identificaci&oacuten</label>
+              <input type="text" name="lineae8" id="lineae8" class="form-control" maxlength="23">
+            </div>
+            <div class="form-group">
+              <label for="lineae9">No. tel&eacutefonico</label>
+              <input type="text" name="lineae9" id="lineae9" class="form-control" maxlength="10">
+            </div>
+            <div class="form-group">
+              <label for="correoE">Correo electronico</label>
+              <input type="text" name="correoE" id="correoE" class="form-control">
+            </div>
+            <br><br>
+            <h5>
+              <p align="center">Domicilio de la persona entrevistada</p>
+            </h5>
+
+            <div>
+              <label for="lineae10">Calle/Tramo carretero</label>
+              <input type="text" name="lineae10" id="lineae10">
+              <label for="lineae11">No. exterior</label>
+              <input type="text" name="lineae11" id="lineae11">
+            </div>
+            <div>
+              <label for="lineae12">No. interior</label>
+              <input type="text" name="lineae12" id="lineae12">
+              <label for="lineae13">Codigo Postal</label>
+              <input type="number" name="lineae13" id="lineae13">
+            </div>
+
+            <div class="form-group">
+              <label for="lineae14">Colonia/Localidad</label>
+              <input type="text" name="lineae14" id="lineae14">
+            </div>
+            <div clas="form-group">
+              <label for="lineae15">Municipio/Demarcaci&oacuten territorial</label>
+              <input type="text" name="lineae15" id="lineae15">
+            </div>
+            <div class="form-group">
+              <label for="lineae16">Entidad federativa</label>
+              <input type="text" name="lineae16" id="lineae16">
+            </div>
+            <div class="form-group">
+              <label for="lineae17">Referencias</label>
+              <input type="text" name="lineae17" id="lineae17">
+            </div>
+            <br>
+            <h5>
+              <p align="center">Apartado E.3 Relato de la entrevista</p>
+            </h5>
+            <div>
+              <i><label for="relatoEnt">Relato de la entrevista</label></i><br>
+              <textarea rows="5" cols="110" type="text" name="relatoEnt" id="relatoEnt" maxlength="1092"></textarea>
+            </div>
+            <br><br>
+            <h5>
+              <br>
+              <p align="center">Apartado E.4 Datos del lugar del traslado o canalizaci&oacuten de la persona
+                entrevistada</p>
+            </h5>
+            <div>
+              <h6>
+                <p>¿Traslad&oacute o canaliz&oacute a la persona entrevistada?</p>
+              </h6>
+              <label for="trasladoSi">Si</label>
+              <input type="checkbox" name="trasladoSi" id="trasladoSi">
+              &emsp;
+              <label for="trasladoNo">No</label>
+              <input type="checkbox" name="trasladoNo" id="trasladoNo">
+            </div>
+            <br>
+
+            <div>
+              <h6>
+                <p>Lugar de traslado o canalizaci&oacuten</p>
+              </h6>
+              <label for="lineae18">Fiscal&iacutea/Agencia</label>
+              <input type="checkbox" name="lineae18" id="lineae18">
+              &emsp;
+              <label for="lineae19">Hospital</label>
+              <input type="checkbox" name="lineae19" id="lineae19">
+              &emsp;
+              <label for="lineae20">Otra dependencia</label>
+              <input type="checkbox" name="lineae20" id="lineae20">
+              &emsp;
+              <label for="lineae80">¿Cual?</label>
+              <input type="text" name="lineae80" id="lineae80">
+            </div>
+            <br><br>
+            <h5>
+              <p align="center">Apartado E.5 Constancia de la lectura de derechos, SOLO en caso de victima u ofendido
+              </p>
+            </h5>
+            <h6>
+              <p align="center"><b>Articulo 20 apartado C de la Constitucion Politica de los Estados Unidos Mexicanos
+                  y
+                  articulos 109
+                  del C&oacutedigo Nacional de Procedimeintos Penales y 7 de ka Ley General de Victimas</b></p>
+            </h6>
+            <h6>
+              <p><i>Indique a la v&iacutectima u ofendido que tiene derecho a:</i></p>
+            </h6>
+            <h6>
+              <p> <b> 1. Recibir asesoría jurídica; ser informado de los derechos que en su favor establece la
+                  Constitución
+                  y, cuando lo solicite, ser informado del desarrollo del procedimiento penal. <br>
+                  2. Recibir desde la comisión del delito, atención médica y psicológica de urgencia. <br>
+                  3. Comunicarse inmediatamente después de haberse cometido el delito con un familiar, incluso con su
+                  asesor jurídico. <br>
+                  4. Ser tratado con respeto y dignidad. <br>
+                  5. Contar con un asesor jurídico gratuito en cualquier etapa del procedimiento, en los términos de
+                  la
+                  legislación aplicable. <br>
+                  6. Acceder a la justicia de manera pronta, gratuita e imparcial respecto de sus denuncias o
+                  querellas.
+                  <br>
+                  7. Recibir gratuitamente la asistencia de un intérprete o traductor. <br>
+                  8. Que se le proporcione asistencia migratoria cuando tenga otra nacionalidad. <br>
+                  9. Que se resguarde su identidad y datos personales, en los términos que establece la ley. <br>
+                </b></p>
+            </h6>
+            <br><br>
+            <h5>
+              <p align="center">Apartado E.6 Datos del primer respondiente que realiz&oacute la entrevista, s&oacutelo
+                si es diferente a quien firm&oacute la puesta a disposici&oacuten</p>
+            </h5>
+            <div class="form-group">
+              <label for="lineae21">Primer apellido</label>
+              <input type="text" name="lineae21" id="lineae21" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="lineae22">Segundo apellido</label>
+              <input type="text" name="lineae22" id="lineae22" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="lineae23">Nombre(s)</label>
+              <input type="text" name="lineae23" id="lineae23" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="lineae24">Adscripci&oacuten</label>
+              <input type="text" name="lineae24" id="lineae24" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="lineae25">Cargo/Grado</label>
+              <input type="text" name="lineae25" id="lineae25" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoF">Incluir anexo F</label> &emsp;
+            <input type="checkbox" name="anexoF" id="anexoF" class="form-check-input" onchange="seleccion(6);">&emsp;
+          </div>
+
+
+          <div id="anexo6">
+            <h2>
+              <p align="center">ANEXO F. ENTREGA - RECEPCION DEL LUGAR DE LA INTERVENCION</p>
+            </h2>
+            <div class="form-group">
+              <label for="linea20">Entrega - recepci&oacuten del lugar de la intervenci&oacuten</label><br>
+              <input type="number" name="linea20" id="linea20" maxlength="3">
+            </div>
+            <br>
+            <H5>
+              <P align="center">Apartado F.1 Preservaci&oacuten del lugar de la intervenci&oacuten</P>
+            </H5>
+
+            <label for="accionesReaF">Explique brevemente las acciones realizadas para la Preservaci&oacuten del lugar
+              de
+              la intervenci&oacuten, (delimitacion, acordonamiento, clausura en el lugar cerrado, etc.)</label>
+            <textarea name="accionesReaF" id="accionesReaF" cols="97" rows="3" maxlength="291"></textarea>
+            <br><br>
+
+            <h6>
+              <p>¿Solicit&oacute apoyo de alguna autoridad o servicios especializados en el lugar de la
+                intervenci&oacuten?</p>
+            </h6>
+
+            <label for="apoyoAutSi">Si</label>
+            <input type="checkbox" name="apoyoAutSi" id="apoyoAutSi">
+            &emsp;
+            <label for="apoyoAutNo">No</label>
+            <input type="checkbox" name="apoyoAutNo" id="apoyoAutNo">
+            &emsp;
+            <label for="cualF">¿Cual?</label>
+            <input type="text" name="cualF" id="cualF" maxlength="90">
+            <br><br>
+
+            <h5>
+              <p align="center">Apartado F.2 Acciones realizadas desp&uacutees de la presservaci&oacuten</p>
+            </h5>
+
+            <h6>
+              <p>Despu&eacutes de la preservaci&oacuten del lugar de la intervenci&&oacuten, ¿Ingres&oacute alguna
+                persona al lugar?</p>
+            </h6>
+
+            <div class="form-group">
+              <label for="lineafSi">Si</label>
+              <input type="checkbox" name="lineafSi" id="lineafSi">
+              &emsp;
+              <label for="lineafNo">No</label>
+              <input type="checkbox" name="lineafNo" id="lineafNo">
+            </div>
+            <div class="form-group">
+              <label for="lineaf1">Motivo del ingreso</label>
+              <textarea name="lineaf1" id="lineaf1" cols="95" rows="2" maxlength="160"></textarea>
+            </div>
+
+            <h6>
+              <p>Datos del personal que ingres&oacute al lugar de la intervenci&oacuten.</p>
+            </h6>
+            <div class="form-group">
+              <label for="lineaf2">Primer apellido</label>
+              <input type="text" name="lineaf2" id="lineaf2">
+              &emsp;
+              <label for="lineaf3">Segundo apellido</label>
+              <input type="text" name="lineaf3" id="lineaf3">
+              &emsp;
+              <label for="lineaf4">Nombre(s)</label>
+              <input type="text" name="lineaf4" id="lineaf4">
+            </div>
+            <div class="form-group">
+              <label for="lineaf5">Grado/Cargo</label>
+              <input type="text" name="lineaf5" id="lineaf5">
+              &emsp;
+              <label for="lineaf6">Instituci&oacuten</label>
+              <input type="text" name="lineaf6" id="lineaf6">
+            </div>
+            <br><br>
+
+
+            <div class="form-group">
+              <label for="lineaf7">Primer apellido</label>
+              <input type="text" name="lineaf7" id="lineaf7">
+              &emsp;
+              <label for="lineaf8">Segundo apellido</label>
+              <input type="text" name="lineaf8" id="lineaf8">
+              &emsp;
+              <label for="lineaf9">Nombre(s)</label>
+              <input type="text" name="lineaf9" id="lineaf9">
+            </div>
+            <div>
+              <label for="lineaf10">Grado/Cargo</label>
+              <input type="text" name="lineaf10" id="lineaf10">
+              &emsp;
+              <label for="lineaf11">Instituci&oacuten</label>
+              <input type="text" name="lineaf11" id="lineaf11">
+            </div>
+            <br><br>
+
+
+            <h5>
+              <p align="center">Apartado F.3 Entrega . recepci&oacuten del lugar de la intervenci&oacuten</p>
+            </h5>
+
+            <h6>
+              <p>Datos de la persona que entrega el lugar de intervenci&oacuten</p>
+            </h6>
+            <div>
+              <label for="lineaf12">Primer apellido</label>
+              <input type="text" name="lineaf12" id="lineaf12">&emsp;
+
+              <label for="lineaf13">Segundo apellido</label>
+              <input type="text" name="lineaf13" id="lineaf13">&emsp;
+
+              <label for="lineaf14">Nombre(s)</label>
+              <input type="text" name="lineaf14" id="lineaf14">
+            </div>
+
+            <div>
+              <label for="lineaf15">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="lineaf15" id="lineaf15">&emsp;
+
+              <label for="lineaf16">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="text" name="lineaf16" id="lineaf16">&emsp;
+            </div>
+            <br>
+
+            <h6>
+              <p>Datos de la persona que recibe el lugar de intervenci&oacuten</p>
+            </h6>
+            <div>
+              <label for="lineaf17">Primer apellido</label>
+              <input type="text" name="lineaf17" id="lineaf17">&emsp;
+
+              <label for="lineaf18">Segundo apellido</label>
+              <input type="text" name="lineaf18" id="lineaf18">&emsp;
+
+              <label for="lineaf19">Nombre(s)</label>
+              <input type="text" name="lineaf19" id="lineaf19">
+            </div>
+
+            <div>
+              <label for="lineaf20">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="lineaf20" id="lineaf20">&emsp;
+
+              <label for="lineaf21">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="text" name="lineaf21" id="lineaf21">&emsp;
+            </div>
+            <br><br>
+
+            <label for="observacionesF3">Observaciones:</label>
+            <textarea name="observacionesF3" id="observacionesF3" cols="100" rows="7" maxlength="840"></textarea>
+            <br><br>
+            <h6>
+              <p>Apartado F.4 Fecha y hora de la entrega - recepci&oacuten del lugar de la intervenci&oacuten</p>
+            </h6>
+            <div class="form-group">
+              <label for="fechaF4">Fecha</label>
+              <input type="date" name="fechaF4" id="fechaF4" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="horaF4">Hr</label>
+              <input type="time" name="horaF4" id="horaF4" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label" for="anexoG">Incluir anexo G</label> &emsp;
+            <input type="checkbox" name="anexoG" id="anexoG" class="form-check-input" onchange="seleccion(7);">&emsp;
+          </div>
+
+          <div id="anexo7">
+            <h2>
+              <p align="center">ANEXO G. CONTINUACION DE LA NARRATIVA DE LOS HECHOS Y/O ENTREVISTA</p>
+            </h2>
+
+            <div align="right">
+              <label for="paginaG">Pagina</label>
+              <input type="text" name="paginaG" id="paginaG" maxlength=3>
+              &emsp;
+              <label for="deG">De</label>
+              <input type="text" name="deG" id="deG" maxlength=3>
+            </div>
+            <br>
+            <div>
+              <h6>
+                <p>Continuaci&oacuten de la narrativa de:</p>
+              </h6>
+              <label for="lineag1">Hechos</label>
+              <input type="checkbox" name="lineag1" id="lineag1">
+              &emsp;
+              <label for="lineag2">Entrevista</label>
+              <input type="checkbox" name="lineag2" id="lineag2">
+            </div>
+
+            <div>
+              <textarea name="continuacionNarrativa" id="continuacionNarrativa" cols="96" rows="25"
+                maxlength="2149"></textarea>
+            </div>
+            <br>
+            <h6>
+              <p>Datos del primer respondiente que realiz&oacute la narraci&oacuten de los hechos y/o entrevista,
+                s&oacutelo si es diferente a quien firm&oacute la puesta a disposici&oacuten</p>
+            </h6>
+            <div>
+              <label for="lineag3">Primer apellido</label>
+              <input type="text" name="lineag3" id="lineag3">&emsp;
+
+              <label for="lineag4">Segundo apellido</label>
+              <input type="text" name="lineag4" id="lineag4">&emsp;
+
+              <label for="lineag5">Nombre(s)</label>
+              <input type="text" name="lineag5" id="lineag5">
+            </div>
+
+            <div>
+              <label for="lineag6">Adscripci&oacuten</label>&emsp; &nbsp;
+              <input type="text" name="lineag6" id="lineag6">&emsp;
+
+              <label for="lineag7">Cargo/Grado</label>&emsp; &nbsp; &nbsp;
+              <input type="text" name="lineag7" id="lineag7">&emsp;
+            </div>
+
+            <div class="form-check">
+              <label for="anexoNo">No se entregan Anexos</label> &emsp;
+              <input type="checkbox" name="anexoNo" id="anexoNo" class="form-check-input">&emsp;
+            </div>
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">GENERAR IPH</button>
+        </form>
+
+
+        <div class="col-3"></div>
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="agregacion.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <script>
+          $(document).ready(function () {
+          /*if ("geolocation" in navigator) { //check geolocation available 
+              //try to get user current location using getCurrentPosition() method
+              navigator.geolocation.getCurrentPosition(function (position) {
+                $("#linea47").val(position.coords.latitude)
+                $("#linea48").val(position.coords.longitude)
+                alert("Found your location nLat : " + position.coords.latitude + " nLang :" + position
+                  .coords.longitude);
+              });
+            } else {
+              alert("Browser doesn't support geolocation!");
+            }*/
+            seleccion(0);
+            seleccion(1);
+            seleccion(2);
+            seleccion(3);
+            seleccion(4);
+            seleccion(5);
+            seleccion(6);
+            seleccion(7);
+            seleccion(8);
+            seleccion(9);
+            seleccion(10);
+            seleccion(11);
+            seleccion(12);
+            seleccion(13);
+            seleccion(14);
+            seleccion(15);
+            seleccion(16);
+            seleccion(17);
+            seleccion(18);
+            seleccion(19);
+            seleccion(20);
+            seleccion(21);
+            seleccion(22);
+            seleccion(23);
+            seleccion(24);
+            seleccion(25);
+            seleccion(26);
+            seleccion(27);
+            seleccion(28);
+            seleccion(29);
+            seleccion(30);
+            seleccion(31);
+            seleccion(32);
+            seleccion(33);
+            seleccion(34);
+            seleccion(35);
+            seleccion(36);
+            seleccion(37);
+            seleccion(38);
+            seleccion(39);
+            seleccion(40);
+            seleccion(41);
+            seleccion(42);
+            seleccion(43);
+            seleccion(44);
+            seleccion(45);
+            seleccion(46);
+            seleccion(47);
+            seleccion(48);
+            seleccion(49);
+            seleccion(50);
+            seleccion(51);
+            seleccion(52);
+            seleccion(82);
+          })
+
+          function seleccion(numero, valor) {
+            switch (numero) {
+              case 0:
+                if (!$("#anexoIPH").is(':checked')) {
+                  $("#anexo0").hide()
+                } else {
+                  $("#anexo0").show()
+                }
+                break;
+
+              case 1:
+                if (!$("#anexoA").is(':checked')) {
+                  $("#anexo1").hide()
+                  $(".anexoA").removeAttr("required")
+                } else {
+                  $("#anexo1").show()
+                  $(".anexoA").attr("required", true)
+                }
+                break;
+              case 2:
+                if (!$("#anexoB").is(':checked')) {
+                  $("#anexo2").hide()
+                } else {
+                  $("#anexo2").show()
+                }
+                break;
+              case 3:
+                if (!$("#anexoC").is(':checked')) {
+                  $("#anexo3").hide()
+                } else {
+                  $("#anexo3").show()
+                }
+                break;
+              case 4:
+                if (!$("#anexoD").is(':checked')) {
+                  $("#anexo4").hide()
+                } else {
+                  $("#anexo4").show()
+                }
+                break;
+              case 5:
+                if (!$("#anexoE").is(':checked')) {
+                  $("#anexo5").hide()
+                } else {
+                  $("#anexo5").show()
+                }
+                break;
+              case 6:
+                if (!$("#anexoF").is(':checked')) {
+                  $("#anexo6").hide()
+                } else {
+                  $("#anexo6").show()
+                }
+                break;
+              case 7:
+                if (!$("#anexoG").is(':checked')) {
+                  $("#anexo7").hide()
+                } else {
+                  $("#anexo7").show()
+                }
+                break;
+
+              case 8:
+                if (!$("#anexoH").is(':checked')) {
+                  $("#anexo8").hide()
+                } else {
+                  $("#anexo8").show()
+                }
+                break;
+
+              case 15:
+                if (!$("#anexoI").is(':checked')) {
+                  $("#anexo15").hide()
+                } else {
+                  $("#anexo15").show()
+                }
+                break;
+
+              case 33:
+                if (!$("#padecimiento").is(':checked')) {
+                  $("#anexo33").hide()
+                } else {
+                  $("#anexo33").show()
+                }
+                break;
+
+              case 34:
+                if (!$("#vul").is(':checked')) {
+                  $("#anexo34").hide()
+                } else {
+                  $("#anexo34").show()
+                }
+                break;
+
+              case 35:
+                if (!$("#del").is(':checked')) {
+                  $("#anexo35").hide()
+                } else {
+                  $("#anexo35").show()
+                }
+                break;
+
+              case 41:
+                if (!$("#tabla").is(':checked')) {
+                  $("#anexo41").hide()
+                } else {
+                  $("#anexo41").show()
+                }
+                break;
+
+              case 44:
+                if (!$("#direNo").is(':checked')) {
+                  $("#anexo44").hide()
+                } else {
+                  $("#anexo44").show()
+                }
+                break;
+
+              case 51:
+                if (!$("#anexoH2").is(':checked')) {
+                  $("#anexo51").hide()
+                } else {
+                  $("#anexo51").show()
+                }
+                break;
+
+              case 52:
+                if (!$("#extranjeraE").is(':checked')) {
+                  $("#extranjeraE52").hide()
+                } else {
+                  $("#extranjeraE52").show()
+                }
+                break;
+
+            }
+
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
